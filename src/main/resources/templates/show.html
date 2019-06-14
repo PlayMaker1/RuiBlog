@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>demo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript"></script>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+	  $("button").click(function(){
+	    $(".test").hide();
+	  });
+	});
+</script>
+</head>
+<body>
+
+<script>
+	$.function(){}
+</script>
+
+<p class="test">class选择器</p>
+<button class="test">class选择器</button>
+	<p>Hello World</p>
+	
+	<h1>my thymeleaf indexpage</h1>
+	欢迎登陆~
+	<table>
+		<tr th:each="users:${users}">
+			<td th:text="${users.id}"></td>
+			<td th:text="${users.userName}"></td>
+		</tr>
+	</table>
+	<button>button</button>
+	<div th:each="users:${users}">
+		<span th:text="${users.id}"></span>
+		<span th:text="${users.userName}"></span>
+		<span><button>编辑</button></span>
+		<span><a href="?id=${users.id}" onClick="return confirm('删除后将无法恢复,确定要删除?')" >删除</a></span>
+	</div>
+	<div>
+		<button>新增</button>
+	</div>
+	<form action="">
+		username:<input type="text" name="username" id="u"><br>
+		password:<input type="password" name="password" id="p"><br>
+		<input type="button" value="submit" id="submit">
+	</form>
+	<script>
+		$(function(){
+			$("#submit").click(function(){
+				var url = "/user/login";
+				var u = $(#u).val()");
+				alert(u);
+				var p = $("input[type='password'].val()");
+				var params = {
+						"username":u,
+						"password":p};
+				
+				$.ajax({
+					"url":url,
+					"data":params,
+					"type":"get",
+					"success":function(data){
+						alert(data.msg)
+					},
+					"error":function(){
+						alert("请大侠重新来过")
+					}
+				});
+			});
+		});
+	</script>
+</body>
+</html>

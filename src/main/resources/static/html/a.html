@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="js/jquery-1.11.1.js"></script>
+            <script type="text/javascript">
+                $(function(){//页面加载完成就会执行此代码
+                    setInterval(quoto,50000000000);//每隔5秒钟执行quoto函数
+                });
+                function quoto(){//该函数通过调用ajax对象（AMLHttpRequest）向服务器发送异步请求，服务器返回一个描述股票信息的字符串，通过解析json字符串，获得股票信息，然后更新表格
+                    $.ajax({//利用jQuery提供的方法向服务器发送异步请求
+                        "url":"aa",
+                        "type":"post",
+                        "dataType":"json",
+                        "success":function(stocks){
+                            //$.ajax会自动将json字符串转换成JavaScript对象
+                            //清空tbody
+                            $('#tb1').empty();
+                            for(i=0;i<stocks.length;i++){
+                                var s=stocks[i];
+                                //更新表格
+                                $('#tb1').append('<tr><td>'+s.name+'</td><td>'+s.sex+'</td><td>'+s.age+'</td><td>'+s.address+'</td></tr>');
+
+                            }
+                        }
+                    });
+                }
+
+            </script>
+        <script type="text/javascript">
+            function loadXMLDoc()
+            {
+            var xmlhttp;
+            if (window.XMLHttpRequest)
+              {// code for IE7+, Firefox, Chrome, Opera, Safari
+              xmlhttp=new XMLHttpRequest();
+              }
+            else
+              {// code for IE6, IE5
+              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+              }
+            xmlhttp.onreadystatechange=function()
+              {
+              if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+                }
+              }
+            xmlhttp.open("GET","/ajax/demo_get.asp",true);
+            xmlhttp.send();
+            }
+        </script>
+        <style type="text/css">
+            table, tr, td
+              {
+              border:1px solid green;
+              }
+
+            td
+              {
+              background-color:green;
+              color:white;
+              }
+        </style>
+    </head>
+    <body>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Sex</td>
+                        <td>age</td>
+                        <td>address</td>
+                    </tr>
+                </thead>
+                <tbody id="tb1">
+
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <input id="delete" onclcik="loadXMLDoc" type="button" value="delete">
+        </div>
+        <div id="myDiv">
+
+        </div>
+    </body>
+</html>

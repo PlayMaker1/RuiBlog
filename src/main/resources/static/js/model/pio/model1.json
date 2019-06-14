@@ -1,0 +1,47 @@
+{
+    "version":"1.0.0",
+    "model":"model1.moc",
+    "textures":[
+        "textures/1.png",
+        "textures/2.png",
+        "textures/3.png"
+    ],
+    "layout":{
+        "center_x":0.0,
+        "center_y":-0.05,
+        "width":2.0
+    },
+    "motions":{
+        "idle":[
+             {"file":"motions/Breath11.mtn"},
+            {"file":"motions/Breath22.mtn"},
+            {"file":"motions/Breath33.mtn"},
+            {"file":"motions/Breath44.mtn"},
+            {"file":"motions/Breath55.mtn"},
+            {"file":"motions/Breath66.mtn"},
+            {"file":"motions/Breath77.mtn"},
+            {"file":"motions/Breath88.mtn"}
+        ],
+        "":[
+            {"file":"motions/Fail.mtn"},
+            {"file":"motions/Sleeping.mtn"},
+            {"file":"motions/Success.mtn"},
+            {"file":"motions/Sukebei1.mtn"},
+            {"file":"motions/Sukebei2.mtn"},
+            {"file":"motions/Sukebei3.mtn"},
+            {"file":"motions/Touch Dere1.mtn"},
+            {"file":"motions/Touch Dere2.mtn"},
+            {"file":"motions/Touch Dere3.mtn"},
+            {"file":"motions/Touch Dere4.mtn"},
+            {"file":"motions/Touch Dere5.mtn"},
+            {"file":"motions/Touch Dere6.mtn"},
+            {"file":"motions/Touch11.mtn"},
+            {"file":"motions/Touch22.mtn"},
+            {"file":"motions/Touch33.mtn"},
+            {"file":"motions/Touch44.mtn"},
+            {"file":"motions/Touch55.mtn"},
+            {"file":"motions/Touch66.mtn"},
+            {"file":"motions/WakeUp1.mtn"}
+        ]
+    }
+}

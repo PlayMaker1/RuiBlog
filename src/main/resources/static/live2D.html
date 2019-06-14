@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Live2D测试网站</title>
+<style type="text/css">
+.waifu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    font-size: 0;
+    transition: all .3s ease-in-out;
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
+}
+.waifu:hover {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+@media (max-width: 768px) {
+    .waifu {
+        display: none;
+    }
+}
+.waifu-tips {
+    opacity: 0;
+    width: 250px;
+    height: 70px;
+    margin: -20px 20px;
+    padding: 5px 10px;
+    border: 1px solid rgba(224, 186, 140, 0.62);
+    border-radius: 12px;
+    background-color: rgba(236, 217, 188, 0.5);
+    box-shadow: 0 3px 15px 2px rgba(191, 158, 118, 0.2);
+    font-size: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    animation-delay: 5s;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-name: shake;
+    animation-timing-function: ease-in-out;
+}
+.waifu #live2d{
+    position: relative;
+}
+
+</style>
+</head>
+<body>
+	<div class="waifu" style="display:blcok;">
+		<div class="waifu-tips" style="opacity:1"></div>
+		<canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+	</div>
+
+
+	<img src="https://xtaolink.cn/wp-content/plugins/lamuleimu/leimu_1.png"
+		alt="雷姆"
+		onmouseover="this.src='https://xtaolink.cn/wp-content/plugins/lamuleimu/leimu_2.png'"
+		onmouseout="this.src='https://xtaolink.cn/wp-content/plugins/lamuleimu/leimu_1.png'"
+		id="audioBtn">
+	<img src="https://xtaolink.cn/wp-content/plugins/lamuleimu/lamu_1.png"
+		alt="拉姆"
+		onmouseover="this.src='https://xtaolink.cn/wp-content/plugins/lamuleimu/lamu_2.png'"
+		onmouseout="this.src='https://xtaolink.cn/wp-content/plugins/lamuleimu/lamu_1.png'"
+		id="audioBtn">
+</body>
+<script src="https://xtaolink.cn/wp-content/plugins/lamuleimu/jquery.js" type="text/javascript"></script>
+<script async src="js/waifu-tips.js"></script>
+<script src="js/live2d.js"></script>
+<script type="text/javascript">
+	loadlive2d("live2d", "js/model.json");
+</script>
+<link rel = "stylesheet"  type = "text/css"  href = "css/shake.css"  />
+
+
+</html>

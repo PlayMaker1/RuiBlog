@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+	<title></title>
+
+</head>
+<body>
+<div class="waifu-tips" style="opacity:1"></div>
+<canvas id="live2d" width="280" height="250"></canvas>
+
+<img src="https://xtaolink.cn/wp-content/plugins/lamuleimu/leimu_1.png"
+		alt="雷姆"
+		onmouseover="this.src='https://xtaolink.cn/wp-content/plugins/lamuleimu/leimu_2.png'"
+		onmouseout="this.src='https://xtaolink.cn/wp-content/plugins/lamuleimu/leimu_1.png'"
+		id="audioBtn">
+	<img src="https://xtaolink.cn/wp-content/plugins/lamuleimu/lamu_1.png"
+		alt="拉姆"
+		onmouseover="this.src='https://xtaolink.cn/wp-content/plugins/lamuleimu/lamu_2.png'"
+		onmouseout="this.src='https://xtaolink.cn/wp-content/plugins/lamuleimu/lamu_1.png'"
+		id="audioBtn">
+</body>
+<script src="/js/live2d.js"></script>
+<script src="https://xtaolink.cn/wp-content/plugins/lamuleimu/jquery.js" type="text/javascript"></script>
+<script src="/js/waifu-tips.js"></script>
+<script type="text/javascript">
+	loadlive2d("live2d", "/js/model.json");
+</script>
+</html>

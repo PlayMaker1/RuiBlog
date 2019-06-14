@@ -1,0 +1,91 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<properties>
+		<jdk.version>1.8</jdk.version>
+		<spring-cloud.version>Dalston.SR1</spring-cloud.version>
+ 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    	<!-- 使用thymeleaf3来提高效率，解决标签闭合问题？ -->
+    	<thymeleaf.version>3.0.0.RELEASE</thymeleaf.version>
+    	<thymeleaf-layout-dialect.version>2.0.0</thymeleaf-layout-dialect.version>	</properties>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.2.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>springboot</groupId>
+	<artifactId>springboot-exercise</artifactId>
+	<version>1.0</version>
+	<name>springboot-exercise</name>
+	<description>Demo project for Spring Boot</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<!-- thymeleaf模板引擎 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+
+		<!-- mybatis 2019/5/6 为了MapperScan -->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.3.0</version>
+		</dependency>
+		<!-- mysql 2019/5/6 为了mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.11</version>
+		</dependency>
+		<!-- 数据库连接池druid 2019/5/6 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<!--添加Eureka服务器端依赖-->
+		<!-- Spring cloud -->
+		<dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka-server</artifactId>
+            <version>1.3.1.RELEASE</version> 
+        </dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<source>${jdk.version}</source>
+					<targer>${jdk.version}</targer>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>  
+		         <artifactId>maven-compiler-plugin</artifactId>  
+		         <configuration>  
+		             <source>${jdk.version}</source>  
+		             <target>${jdk.version}</target>  
+		             <compilerArguments>  
+		                 <bootclasspath>${JAVA_HOME}/jre/lib/rt.jar;${JAVA_HOME}/jre/lib/jce.jar</bootclasspath>  
+		             </compilerArguments>  
+		         </configuration>  
+			</plugin>
+		</plugins>
+		
+	</build>
+
+</project>

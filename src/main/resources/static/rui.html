@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<style>
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing:border-box;
+}
+body {
+	font-family: "华文细黑";
+	background: url("/pic/1.jpg") no-repeat;
+	background-size: 100%;
+	cursor: url("pic/Nier/s3.png"), auto;
+}
+
+video {
+	position: fixed;
+	right: 0px;
+	bottom: 0px;
+	min-width: 100%;
+	min-height: 100%;
+	height: auto;
+	width: auto;
+	background-size:cover;
+	/*加滤镜*/
+	/*filter: blur(15px); //背景模糊设置 */
+	/*-webkit-fil	ter: grayscale(100%);*/
+	/*filter:grayscale(100%); //背景灰度设置*/
+	z-index: -11
+}
+
+.filter {
+	filter: blur(15px);
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+
+source {
+	min-width: 100%;
+	min-height: 100%;
+	height: auto;
+	width: auto;
+}
+
+p {
+	width: 100%;
+	text-align: center;
+	font-size: 40px;
+	color: white;
+}
+.parent {
+	width: 10%;
+	height: 10%;
+	/* 以下属性垂直居中 */
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background-color: #aaa;
+}
+
+#page{
+	margin : 200px 0px 0px 900px;
+}	
+
+#center {
+	position:absolute;
+	z-index:5;
+    background-color: #ffff99;	
+	transition:0.25s;
+	animation:float 1s infinite;
+}
+
+#center .icon{
+	padding:40px 0px;
+	position:relative;
+	height:100%;
+	width:100%;
+	display:flex;
+	flex-direction:column;
+	justify-content:space-around;
+	align-items:center;
+/* 	transform: skew(-50deg); */
+}
+
+.bar{
+	height:15px;
+	width:50%;
+	background:#000000;
+}
+
+.btn{
+	width: 160px;
+    height: 160px;
+}
+
+nav{
+	position:relative;
+	transform: rotateX(60deg) rotateY(0deg) rotateZ(-45deg);
+	width:160px;
+	height:160px;
+}
+
+.btn.item{
+	position:absolute;
+	top:0;
+	z-index:1;
+	transition: all 0.25s ease-out;
+	left:0px;
+	top:0px;
+	opacity:1;
+}
+
+.btn.item:not(.opened){
+	background:rgba(255, 255, 255,0.5);
+}
+
+#center:hover{
+	cursor:pointer;
+	background:#ff99ff;
+}
+
+#center:hover .bar{
+/* 	background:#99ffff; */
+}
+
+.btn.item span:hover{
+	cursor:pointer;
+	background:green !important;
+	color:#ffffff !important;
+}
+
+.btn.item span{
+	opacity:0.5;
+}
+
+.btn.item.opened span{
+	opacity:1;
+	background:#ffff64;
+	color:#000000;
+	padding:0 -12px;
+}
+
+.btn.item.opened{
+	font-family:'open sans';
+	font-size:4.5rem;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+#up{
+	top:20px;
+	left:-20px;
+}
+#bottom{
+	top:40px;
+	left:-40px;
+}
+#left{
+	top:60px;
+	left:-60px;
+}
+#right{
+	top:80px;
+	left:-80px;
+}
+#up.opened{
+	top:-100%;
+	left:0;
+}
+#right.opened{
+	left:140%;
+	top:0;
+}
+
+#bottom.opened{
+	top:100%;
+	left:0;
+}
+#left.opened{
+	left:-140%;
+	top:0;
+}
+
+#center.close .bar.top{
+	position:absolute;
+	top:25px;
+	left:48px;
+	transform-origin:center left;
+	transform:rotateZ(45deg);
+	width:66%;
+	padding:14px;
+}
+
+#center.close .bar.bottom{
+	position:absolute;
+	bottom:40px;
+	left:50px;
+	transform-origin:center left;
+	transform:rotateZ(-45deg);
+	width:65%;
+}
+
+#center.close .bar.middle{
+	width:0
+}
+#center.close .bar.last{
+	width:0
+}
+@keyframes float {
+  0%,100% {
+    top: 0px;
+	 left:0px;
+  }
+
+  50% {
+    top:-5px;
+	 left:5px;
+  }
+}
+
+</style>
+<body>
+<div id="page">
+	<nav>
+		<div id="center" class="btn">
+			<div class="icon">
+				<div class="bar top"></div>
+				<div class="bar middle"></div>
+				<div class="bar bottom"></div>
+			</div>
+		</div>
+		<div id="up" class="btn item">
+			<span class="hop">切换</span>
+		</div>
+		<div id="right" class="btn item">
+			<span class="filter">滤镜</span>
+		</div>
+		<div id="bottom" class="btn item">
+			<span class="sound">声音</span>
+		</div>
+		<div id="left" class="btn item">
+			<span>待续</span>
+		</div>
+	</nav>
+</div>
+
+<script>
+const navItems = document.querySelectorAll('nav .item');
+
+document.querySelector('#center').addEventListener('click',function(){
+	for(let i=0;i<navItems.length;i++){
+		navItems[i].classList.toggle('opened')
+	}
+	document.querySelector('#center').classList.toggle('close')
+})
+</script>
+
+	 <!-- <div class="parent"></div> -->
+	<button class="hop"><img alt="加入调查兵团!" src="pic/zyzy.png" ></button>
+	<button class="filter">滤镜</button>
+	<video autoplay loop id="av" class="filter" muted>
+		<source src="radio/1.mp4"
+			type="video/mp4" />
+	</video>
+	<script type="text/javascript">
+		$(function() {
+			$('.hop').on('click', function() {
+				$('#av').fadeToggle();
+			})
+			$('.filter').on('click', function() {
+				$('video').toggleClass('filter');
+			})
+			$('.sound').on('click', function() {
+				/*会返回 muted值,如果不存在 muted属性则会返回"undefined"  */
+				if (typeof ($('video').attr("muted")) == "undefined") {
+					$('video').attr("muted");
+				} else {
+					$('video').removeAttr("muted");
+				}
+			})
+		})
+		
+var imgs = $('.hop');
+
+var imgWidth = 172; //图片的默认宽度，主意不要带单位
+
+var imgHeight = 110; //图片的默认高度，主意不要带单位
+
+imgs.hover(function(){
+
+$(this).find('img').stop().animate({
+
+left:'-20',
+
+top:'-20',
+
+right:'-20',
+
+bottom:'-10px',
+
+width:imgWidth+20+'px',
+
+height:imgHeight+20+'px'
+
+},300);
+
+},function(){
+
+$(this).find('img').stop().animate({
+
+left:'0',
+
+top:'0',
+
+right:'0',
+
+bottom:'0',
+
+width:imgWidth+'px',
+
+height:imgHeight+'px'
+
+},300);
+
+});
+		
+	</script> 
+</body>
+</html>
