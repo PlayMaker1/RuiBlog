@@ -15,14 +15,15 @@ public class GetGoogleController {
 		String header = request.getHeader("user-Agent").toLowerCase();
 		if (header.contains("chrome")) {
 			m.addObject("browser", "chrome浏览器");
-		} else if (header.contains("filefox")) {
-			m.addObject("browser", "火狐浏览器");
-		} else if (header.contains("msie")) {
+		}
+		if (header.contains("filefox")) {
+			m.addObject("b	rowser", "火狐浏览器");
+		}
+		if (header.contains("msie")) {
 			m.addObject("browser", "IE浏览器，我服");
-		} else if (header.contains("qq")) {
+		}
+		if (header.contains("qq")) {
 			m.addObject("browser", "QQ浏览器");
-		} else {
-			m.addObject("browser", "其他浏览器");
 		}
 		m.setViewName("/exemsg");
 		return m;

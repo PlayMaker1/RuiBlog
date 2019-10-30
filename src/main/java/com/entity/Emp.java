@@ -1,5 +1,8 @@
 package com.entity;
 
+import lombok.Getter;
+
+@Getter
 public class Emp {
 	private String name;
 	private String sec;
@@ -23,5 +26,4 @@ public class Emp {
 	public void setSec(String sec) {
 		this.sec = sec;
 	}
-	
 }

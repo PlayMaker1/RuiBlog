@@ -26,7 +26,7 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
-	
+
 	@RequestMapping(value = "/show")
 	public String show(Model model){
 		List<User> users = userService.findAllUsers();
