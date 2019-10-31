@@ -1,0 +1,49 @@
+{
+  "version": "Sample 1.0.0",
+  "name": "nero",
+  "model": "nero.moc",
+  "textures": [
+    "textures/texture_00.png"
+  ],
+  "layout": {
+    "width": 3.6026,
+    "center_x": -0.0943,
+    "center_y": 0.3524
+  },
+  "motions": {
+    "idle": [
+      {
+        "file": "mtn/nero_live2D_idle.mtn",
+        "sound": "voice/25.mp3"
+      },
+      {
+        "file": "motions/nero_live2D_01.mtn",
+        "sound": "voice/01.mp3"
+      },
+      {
+        "file": "motions/nero_live2D_02.mtn",
+        "sound": "voice/02.mp3"
+      },
+      {
+        "file": "motions/nero_live2D_03.mtn",
+        "sound": "voice/03.mp3"
+      },
+      {
+        "file": "motions/nero_live2D_04.mtn",
+        "sound": "voice/04.mp3"
+      },
+      {
+        "file": "motions/nero_live2D_05.mtn",
+        "sound": "voice/05.mp3"
+      },
+      {
+        "file": "motions/nero_live2D_06.mtn",
+        "sound": "voice/06.mp3"
+      },
+      {
+        "file": "motions/nero_live2D_07.mtn",
+        "sound": "voice/07.mp3"
+      }
+    ]
+  }
+}

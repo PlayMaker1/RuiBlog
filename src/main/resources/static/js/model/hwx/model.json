@@ -1,0 +1,38 @@
+{
+  "version": "Sample 1.0.0",
+  "name": "model",
+  "model": "model.moc",
+  "textures": [
+    "textures/1.png"
+  ],
+  "layout": {
+    "width": 3.6026,
+    "center_x": -0.0943,
+    "center_y": 0.3524
+  },
+  "motions": {
+    "idle": [
+      {
+        "file": "noir_base_kurakura01.mtn"
+      },
+      {
+        "file": "noir_base_touch01.mtn"
+      },
+      {
+        "file": "noir_camera.mtn"
+      },
+      {
+        "file": "noir_costume_classic.mtn"
+      },
+      {
+        "file": "noir_costume_santa.mtn"
+      },
+      {
+        "file": "noir_costume_swim.mtn"
+      },
+      {
+        "file": "noir_costume_v.mtn"
+      }
+    ]
+  }
+}

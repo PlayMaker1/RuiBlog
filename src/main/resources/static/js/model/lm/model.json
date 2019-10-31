@@ -1,0 +1,69 @@
+{
+  "version": "Live2D MoePet v1.1",
+  "name": "remu",
+  "model": "model.moc",
+  "textures": [
+    "textures/texture_00.png"
+  ],
+  "layout": {
+    "center_x": 0.0,
+    "center_y": -0.05,
+    "width": 2.0
+  },
+  "motions": {
+    "idle": [
+      {
+        "file": "motions/1.mtn",
+        "sound": "voice/01.wav"
+      },
+      {
+        "file": "motions/2.mtn",
+        "sound": "voice/02.wav"
+      },
+      {
+        "file": "motions/3.mtn",
+        "sound": "voice/03.wav"
+      },
+      {
+        "file": "motions/4.mtn",
+        "sound": "voice/04.wav"
+      },
+      {
+        "file": "motions/5.mtn",
+        "sound": "voice/05.wav"
+      },
+      {
+        "file": "motions/6.mtn",
+        "sound": "voice/06.wav"
+      },
+      {
+        "file": "motions/7.mtn",
+        "sound": "voice/07.wav"
+      }
+    ],
+    "sleepy": [
+      {
+        "file": "motions/4.mtn"
+      }
+    ],
+    "flick_head":[
+      {"file":"motions/Live2D_remu34.mtn"},
+      {"file":"motions/Live2D_remu33.mtn"},
+      {"file":"motions/Live2D_remu32.mtn"},
+      {"file":"motions/Live2D_remu31.mtn"},
+      {"file":"motions/Live2D_remu30.mtn"},
+      {"file":"motions/Live2D_remu29.mtn"}
+    ],
+    "tap_body":[
+      {"file":"motions/Live2D_remu28.mtn"},
+      {"file":"motions/Live2D_remu27.mtn"},
+      {"file":"motions/Live2D_remu26.mtn"},
+      {"file":"motions/Live2D_remu25.mtn"},
+      {"file":"motions/Live2D_remu23.mtn",
+        "sound": "voice/25.wav"},
+      {"file":"motions/Live2D_remu24.mtn",
+        "sound": "voice/26.wav"
+      }
+    ]
+  }
+}

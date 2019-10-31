@@ -18,7 +18,6 @@
     "motions":{
         "idle":[
             {"file":"motions/WakeUp.mtn"},
-            {"file":"motions/Breath1.mtn"},
             {"file":"motions/Breath2.mtn"},
             {"file":"motions/Breath3.mtn"},
             {"file":"motions/Breath5.mtn"},

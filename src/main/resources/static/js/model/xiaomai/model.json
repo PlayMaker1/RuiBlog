@@ -1,0 +1,49 @@
+{
+  "version": "Sample 1.0.0",
+  "name": "model",
+  "model": "model.moc",
+  "textures": [
+    "textures/1.png"
+  ],
+  "layout": {
+    "width": 1.8376,
+    "center_x": -0.0507,
+    "center_y": -0.089
+  },
+  "motions": {
+    "idle": [
+      {
+        "file": "mtn/1.mtn",
+        "sound": "voice/01.wav"
+      },
+      {
+        "file": "mtn/2.mtn",
+        "sound": "voice/02.wav"
+      },
+      {
+        "file": "mtn/3.mtn",
+        "sound": "voice/03.wav"
+      },
+      {
+        "file": "mtn/4.mtn",
+        "sound": "voice/04.wav"
+      },
+      {
+        "file": "mtn/5.mtn",
+        "sound": "voice/05.wav"
+      },
+      {
+        "file": "mtn/6.mtn",
+        "sound": "voice/05.wav"
+      },
+      {
+        "file": "mtn/7.mtn",
+        "sound": "voice/05.wav"
+      },
+      {
+        "file": "mtn/8.mtn",
+        "sound": "voice/05.wav"
+      }
+    ]
+  }
+}
